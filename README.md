@@ -1,8 +1,8 @@
-# Projeto
+# About project
 
-O proposito deste projeto é montar uma API para gerenciar um cardápio online.a
+The goal of this project is to build an API to manage an online menu.
 
-## Tecnologias
+## Technologies
 
 - Typescript
 - NodeJS
