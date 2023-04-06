@@ -1,11 +1,7 @@
 import 'dotenv/config';
-import app from './app/index';
+import app from './app/server';
 
 const PORT = process.env.PORT || process.env.LOCAL_PORT;
-
-app.get('/', (req, res) => {
-    res.send('OK');
-})
 
 app.listen(PORT, () => {
     console.log(`On port: ${PORT}`)
