@@ -12,7 +12,6 @@ function generateToken(paramns: {}) {
     return jwt.sign(paramns, hash, {
         expiresIn: 86400,
     })
-
 }
 
 routes.post('/register', async (req, res) => {
@@ -24,6 +23,7 @@ routes.post('/register', async (req, res) => {
 
         const user = await UserSchema.create(req.body); 
         
+        // Não retorna o password na criação
         user.password = undefined;
 
         return res.send({
