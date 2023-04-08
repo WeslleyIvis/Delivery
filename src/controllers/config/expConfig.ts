@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import cors from "cors";
 import routes from "../routes/authController";
 import project from "../routes/projectController"
+import category from "../routes/category";
 import { connectMongoDB } from "../../database/connectDB";
 
 
@@ -13,5 +14,6 @@ export default function appConfig(app: Express): void {
 
     app.use('/auth', routes)
     app.use('/project', project);
+    app.use('/categories', category)
 }
 
