@@ -14,6 +14,22 @@ router.get('/product', async (req, res) => {
     }
 })
 
+router.get('/product/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const product = await Product.findById(id);
+ 
+        if (!product) {
+            return res.status(404).send({error: "Product not found"})
+        }
+        
+        res.status(200).send(product);
+    } catch (err) {
+        res.send({error: "Product does not exist"})
+    }
+})
+
 // Validação de Token para seguir nas proximas rotas
 router.use(authMiddleware);
 
@@ -38,22 +54,6 @@ router.post('/product', async (req, res) => {
 
     } catch(err) {
         res.send({error: err})
-    }
-})
-
-router.get('/product/:id', async (req, res) => {
-    const { id } = req.params;
-
-    try {
-        const product = await Product.findById(id);
- 
-        if (!product) {
-            return res.status(404).send({error: "Product not found"})
-        }
-        
-        res.status(200).send(product);
-    } catch (err) {
-        res.send({error: "Product does not exist"})
     }
 })
 

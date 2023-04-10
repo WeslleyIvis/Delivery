@@ -9,6 +9,7 @@ export interface CategoryProps {
 }
 
 export interface Product {
+    _id: string;
     name: string;
     value: string;
     category: string;

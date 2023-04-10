@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import jwt, { DecodeOptions, JwtPayload } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 interface AuthRequest extends Request {
     userId?: string;
