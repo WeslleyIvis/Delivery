@@ -1,6 +1,6 @@
 import mongoose, { Mongoose, mongo } from "mongoose";
 
-interface ProductTypes {
+export interface ProductTypes {
     name: String;
     value: String;
     category: String;
