@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content-form-login {
+  max-width: 600px;
+}
+
+.content-form-login form {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 400px;
+}
+
+input[type="text"] {
+  flex-basis: 100%;
+  margin-bottom: 10px;
+  padding: .5em;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 5px;
+}
+
+input[type="text"]::placeholder {
+  color: rgb(138, 138, 138);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="text"]:focus {
+  outline: 1px solid rgb(94, 94, 94);
+}
+
+button[type="submit"] {
+  cursor: pointer;
+  margin-top: 1em;
+  flex-basis: 100%;
+  border: none;
+  padding: 10px;
+  background-color: rgba(131, 196, 34, 1);
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  transition: .5s;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(107, 160, 29);
+}

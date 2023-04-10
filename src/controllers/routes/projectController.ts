@@ -97,7 +97,19 @@ router.patch('/product/:id', async (req, res) => {
     }
 })
 
+router.delete('/product/:id', async (req, res) => {
+    const { id } = req.params;
 
+    try {
+        const product = await Product.findByIdAndDelete(id);
 
+        if(!product) 
+            return res.status(404).send({error: "Product not found"});
+        
+        return res.status(200).json(product);
+    } catch (err) {
+        res.send({error: err});
+    }
+})
 
 export default router;

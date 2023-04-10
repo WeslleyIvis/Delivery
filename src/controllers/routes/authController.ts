@@ -38,6 +38,8 @@ routes.post('/register', async (req, res) => {
 routes.post('/authenticate',async (req, res) => {
     const {email, password} = req.body;
 
+    console.log({email: email, password: password})
+
     const user = await UserSchema.findOne({email}).select('+password');
 
     if(!user) 
