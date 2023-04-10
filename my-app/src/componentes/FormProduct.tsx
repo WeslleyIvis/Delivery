@@ -36,9 +36,9 @@ const FormProduct = () => {
         .catch(err => console.log(err));
     }
 
-    console.log(status)
   return (
     <div className='content-form-login'>
+
         <form onSubmit={createProduct}>
             <label htmlFor="name">Nome</label>
             <input
@@ -47,6 +47,7 @@ const FormProduct = () => {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
+                required
                 />
             <label htmlFor="value">Value</label>
             <input
@@ -55,6 +56,7 @@ const FormProduct = () => {
                 name="value"
                 value={form.value}
                 onChange={handleChange}
+                required
                 />
 
             <label htmlFor="category">Category</label>
@@ -64,6 +66,8 @@ const FormProduct = () => {
                 name="value"
                 value={form.category}
                 onChange={handleChange}
+                required
+                placeholder='Category existent'
                 />
 
             <label htmlFor="image">Image</label>
@@ -73,6 +77,8 @@ const FormProduct = () => {
                 name="value"
                 value={form.image}
                 onChange={handleChange}
+                required
+                placeholder='URL image'
                 />
             <button type="submit">Create</button>
 
