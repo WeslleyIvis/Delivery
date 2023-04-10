@@ -1,27 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Categories from './Categories';
-import { Category } from './Interfaces';
+import Controller from './Controller';
+import FormProduct from './FormProduct';
 
 const AsideADM = () => {
-    const token = sessionStorage.getItem('Authorization');
     const navigate = useNavigate();
-    const [category, setCategory] = React.useState<Category[]>([]);
-
-    async function getCategories() {
-        await fetch('http://localhost:3333/categories', {
-            method: "GET",
-         })
-        .then(r => r.json())
-        .then(data => setCategory(data))
-        .catch(err => console.log({error: err}))
-    }
-
-    React.useEffect(() => {
-        getCategories();
-    }, [])
-    
-
+    const [controller, setController] = React.useState('category')
+  
   return (
     <section className='content'>
         <aside className='aside'>
@@ -36,17 +21,14 @@ const AsideADM = () => {
 
             <ul className='aside-menu'>
                 <li><h3>Menu</h3></li>
-                <li onClick={getCategories}>Categories</li>
-                <li>Create Product</li>
-                <li>Delete Product</li>
-                <li>Edit Product</li>
-                <li>Search Product</li>
+                <li onClick={() => setController('category') }>Categories</li>
+                <li onClick={() => setController('create')}>Create Product</li>
                 <li onClick={() => navigate('/')}>Logout</li>
             </ul>
         </aside>
         
         <div className='products'>
-            {category && (<Categories data={category}/>)}
+            {controller && (<Controller data={controller}/>)}
         </div>
     </section>
 
