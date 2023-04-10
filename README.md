@@ -1,6 +1,6 @@
 # Delivery
 
-The goal of this project is to build an API to manage an online menu.
+O objetivo deste teste é montar uma API para gerenciar um cardápio online.
 
 ## Technologies
 
@@ -115,4 +115,6 @@ Para iniciar o front-end: use o comando no diretorio
  
  ### OBS
  
+ API - OK
+ FRONT - UM Caos
  Tem algums bugues, não deu tempo de fazer a Editão dos produtos, Autenticação do ADM na hora da criação direta pelo código não consegue se auto validar, o layout do site fiz correndo pra dar tempo de fazer a aplicação, a pressa é inimiga das coisas boas haha, mas aprendi muita coisa que não sabia desenvolvedo essa aplicação, em breve resolverei todas as questões que não consegui fazer nesse tempo.
