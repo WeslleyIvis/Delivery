@@ -6,6 +6,37 @@ The goal of this project is to build an API to manage an online menu.
 
 ![image](https://user-images.githubusercontent.com/79803635/230973068-1137914b-55f4-4ca1-95b5-6a812112018b.png)
 
+### UI
+Bem simples e feio
+
+![image](https://user-images.githubusercontent.com/79803635/231003870-8e99f3c1-5824-4186-9faa-b08dd61e6e59.png)
+
+Por problemas na criação do ADM será necessário cria-lo pelo Insomina ou Postman etc.. 
+
+![image](https://user-images.githubusercontent.com/79803635/231004238-ea77a599-70a7-4f12-839a-bd69c96d1d6b.png)
+
+http://localhost:3333/auth/register
+
+
+{
+	"name": "use",
+	"email": "use",
+	"password": "123"
+}
+
+<hr>
+
+## Iniciar aplicação
+
+Para iniciar o servidor nodejs utilizar o comando no direitorio raiz da aplicação 
+
+|| \Desktop\REST_API_NODE> $`npm start`
+
+Para iniciar o front-end: use o comando no diretorio
+
+|| \Desktop\REST_API_NODE\my-app> $`yarn start`
+
+<hr>
 
 ### Back-end
 - Typescript
@@ -79,3 +110,9 @@ The goal of this project is to build an API to manage an online menu.
 `Web-vitals`
 
   Ajuda a medir e monitorar as métricas de desempenho do usuário na web. Ele fornece uma série de utilitários e funções para medir métricas de desempenho, como tempo de carregamento da página, interatividade do usuário e estabilidade visual, permitindo que os desenvolvedores monitorem e otimizem a experiência do usuário em seus aplicativos web.
+  
+ <hr>
+ 
+ ### OBS
+ 
+ Tem algums bugues, não deu tempo de fazer a Editão dos produtos, Autenticação do ADM na hora da criação direta pelo código não consegue se auto validar, o layout do site fiz correndo pra dar tempo de fazer a aplicação, a pressa é inimiga das coisas boas haha, mas aprendi muita coisa que não sabia desenvolvedo essa aplicação, em breve resolverei todas as questões que não consegui fazer nesse tempo.
