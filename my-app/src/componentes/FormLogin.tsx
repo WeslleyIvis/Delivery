@@ -1,9 +1,11 @@
 import React, { SyntheticEvent } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const FormLogin = () => {
+const FormLogin = ({onLogin}: any) => {
   const [name, setName] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [status, setStatus] = React.useState('');
+  const navigate = useNavigate();
 
   async function submit(event: SyntheticEvent) {
     event.preventDefault();
@@ -23,8 +25,10 @@ const FormLogin = () => {
   const valid = async (tokenData: {error: string, token: string}) => {
     const {error, token} = tokenData;
 
-    if(token) {
-      return console.log({token: token});
+    if(token) {      
+      sessionStorage.setItem('Authorization', `Bearer ${token}`)
+      onLogin(token);
+      navigate(`/admIndex${token}`);
     }
 
     if(error) {
@@ -57,8 +61,6 @@ const FormLogin = () => {
         <button type="submit">Sign In</button>
         <p>{status}</p>
       </form>
-
- 
     </div>
   )
 }
