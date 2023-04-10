@@ -5,12 +5,6 @@ import { Category } from '../../models/category';
 
 const router = express.Router();
 
-router.use(authMiddleware);
-
-router.get('/',async (req, res) => {
-    res.send({ok: true, user: (req as any).userId});
-});
-
 router.get('/product', async (req, res) => {
     try {
         const products = await Product.find({});
@@ -19,6 +13,9 @@ router.get('/product', async (req, res) => {
         res.status(500).send({error: err});
     }
 })
+
+// Validação de Token para seguir nas proximas rotas
+router.use(authMiddleware);
 
 router.post('/product', async (req, res) => {
     const { name, value, category } = req.body;
