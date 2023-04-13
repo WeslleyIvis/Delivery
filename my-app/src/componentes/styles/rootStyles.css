@@ -8,15 +8,15 @@
     --content-max-width: 1200px;
 }
 
-a {
-    color: white;
-}
-
 .header {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     background-color: rgba(57, 61, 74, 1);
     max-height: 60px;
+}
+
+.header a {
+    color: white;
 }
 
 .header img {
@@ -43,8 +43,9 @@ a {
 
 .header-phone {
     display: flex;
+    gap: 15px;
 }
 
-.header-login img{
+.header-login img, .header-phone img {
     margin-right: 10px;
 }

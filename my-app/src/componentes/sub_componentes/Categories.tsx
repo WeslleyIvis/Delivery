@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CategoriesController = () => {
+const Categories = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const CategoriesController = () => {
   )
 }
 
-export default CategoriesController
+export default Categories

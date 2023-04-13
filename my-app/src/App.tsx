@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Controller from './componentes/Controller';
-
+import {Header} from './componentes/Header';
+import Navbar from './componentes/Navbar';
 
 function App() {
   const [token, setToken] = React.useState<String | null>(null);
@@ -12,16 +11,10 @@ function App() {
   }
 
   return (
-    <Router>
-      <Routes>
-        {/* <Route path='/' element={<FormLogin onLogin={handleToken} />} />
-        {token && (
-          <Route path={`/admIndex${token}`} element={<Main />} />
-        )} */}
-        <Route path='/' element={<Controller />} />
-      </Routes>
-    </Router>
-  );
+    <div>
+        <Header />
+        <Navbar />
+    </div>)
 }
 
 export default App;
