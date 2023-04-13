@@ -1,11 +1,11 @@
 import React from 'react'
-import AsideADM from './AsideADM'
+import Layout from './Header'
 
 const Main = () => {
 
   return (
     <div>
-        <AsideADM />
+        <Layout />
     </div>
   )
 }
