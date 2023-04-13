@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Main from './componentes/Main';
+import Controller from './componentes/Controller';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         {token && (
           <Route path={`/admIndex${token}`} element={<Main />} />
         )} */}
-        <Route path='/' element={<Main />} />
+        <Route path='/' element={<Controller />} />
       </Routes>
     </Router>
   );
