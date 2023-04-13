@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import FormLogin from './componentes/FormLogin';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './componentes/Main';
-import FormProduct from './componentes/FormProduct';
+
 
 function App() {
   const [token, setToken] = React.useState<String | null>(null);
@@ -15,11 +14,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<FormLogin onLogin={handleToken} />} />
+        {/* <Route path='/' element={<FormLogin onLogin={handleToken} />} />
         {token && (
           <Route path={`/admIndex${token}`} element={<Main />} />
-        )}
-        <Route path='/index' element={<FormProduct />} />
+        )} */}
+        <Route path='/' element={<Main />} />
       </Routes>
     </Router>
   );
