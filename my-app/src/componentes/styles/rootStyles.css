@@ -49,3 +49,54 @@
 .header-login img, .header-phone img {
     margin-right: 10px;
 }
+
+
+/* NAV */
+
+.nav-content {
+    padding-top: 35px;
+    margin: 0 auto;
+    max-width: var(--content-max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-content .logo{
+    max-width: 100px;
+}
+
+.nav-content .logo img {
+    width: 100%;
+}
+
+.nav-categories {
+    display: flex;
+    max-width: 650px;
+    overflow: hidden;
+}
+
+.nav-categories a{    
+    margin-right: 50px;
+    font-family: roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.25em;
+    font-weight: 500;
+    color: var(--color-font-nav);
+    transition: .5s;
+}
+
+.nav-categories a:hover {
+    color: var(--color-contrast);
+}
+
+.nav-icons img {
+    margin-right: 30px;
+    width: 15px;
+    padding: 5px;
+    transition: .5s;
+}
+
+.nav-icons img:hover {
+    border-radius: 50%;
+    background-color: var(--color-contrast);
+}

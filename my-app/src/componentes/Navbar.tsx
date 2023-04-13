@@ -20,21 +20,23 @@ const Navbar = () => {
     getCategories();
   }, [])
   return (
-    <nav>
-      <div>
-        <img src="https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.com.png" alt="Logo Food" />
-      </div>
+    <nav className="nav">
+      <div className='nav-content'>
+        <div className='logo'>
+          <img src="https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.com.png" alt="Logo Food" />
+        </div>
 
-      {categories && categories ? <div>
-        {categories.map(element => {
-          return <a href='/' key={element.category}>{element.category}</a>
-        })}
-      </div> : null }
+        {categories && categories ? <div className='nav-categories'>
+          {categories.map(element => {
+            return <a href='/' key={element.category}>{element.category}</a>
+          })}
+        </div> : null }
 
-      <div>
-        <a href="/"><img src={require("./images/lupa.png")} alt="" /></a>
-        <a href="/"><img src={require("./images/coracao.png")} alt="" /></a>
-        <a href="/"><img src={require("./images/bag.png")} alt="" /></a>
+        <div className='nav-icons'>
+          <a href="/"><img src={require("./images/lupa.png")} alt="Lupa" /></a>
+          <a href="/"><img src={require("./images/heart.png")} alt="Heart" /></a>
+          <a href="/"><img src={require("./images/bag.png")} alt="Bag" /></a>
+        </div>
       </div>
     </nav>
   )
