@@ -1,27 +1,22 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Controller from './componentes/Controller';
-
+import {Header} from './componentes/Header';
+import Navbar from './componentes/Navbar';
+import Main from './componentes/Main';
 
 function App() {
-  const [token, setToken] = React.useState<String | null>(null);
+  const [category, setCategory] = React.useState<string>('');
 
-  function handleToken(tokenGenerate: string) {
-    setToken(tokenGenerate);
+  const handleCategory = (r: string) => {
+    setCategory(r);
   }
 
   return (
-    <Router>
-      <Routes>
-        {/* <Route path='/' element={<FormLogin onLogin={handleToken} />} />
-        {token && (
-          <Route path={`/admIndex${token}`} element={<Main />} />
-        )} */}
-        <Route path='/' element={<Controller />} />
-      </Routes>
-    </Router>
-  );
+    <div>
+        <Header />
+        <Navbar handleCategory={handleCategory}/>
+        <Main category={category}/>
+    </div>)
 }
 
 export default App;

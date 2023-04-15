@@ -1,11 +1,22 @@
 import React from 'react'
+import MainLayout from './sub_componentes/MainLayout'
+import CategoryProductNavSelection from './sub_componentes/CategoryProductNavSelection'
 
-const Main = () => {
+const Main = (props: {category: string}) => {
+
+  console.log(props)
 
   return (
-    <div>
+    <main className='main'>
+      {
+        props.category && props.category 
+        ? 
+        <CategoryProductNavSelection category={props.category}/>
+        :    
+        <MainLayout />
+      }
       
-    </div>
+    </main>
   )
 }
 

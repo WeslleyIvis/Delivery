@@ -1,10 +1,5 @@
-:root {
-  /*OBS: Sou daltonico*/
-  --bg-dark-blue: rgba(36, 22, 75, 1);
-  --bg-green: rgba(131, 196, 34, 1);
-}
 
-@import './componentes/styles/style.css';
+@import './componentes/styles/rootStyles.css';
 
 * {
   margin: 0;
@@ -20,12 +15,4 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 270px 1fr ;
-}
 
-.main {
-  display: grid;
-  grid-template-columns: minmax(300px, 350px) 1fr;
-}
