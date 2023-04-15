@@ -6,36 +6,6 @@ O objetivo deste teste é montar uma API para gerenciar um cardápio online.
 
 ![image](https://user-images.githubusercontent.com/79803635/230973068-1137914b-55f4-4ca1-95b5-6a812112018b.png)
 
-### UI
-Bem simples e feio
-
-![image](https://user-images.githubusercontent.com/79803635/231003870-8e99f3c1-5824-4186-9faa-b08dd61e6e59.png)
-
-Por problemas na criação do ADM será necessário cria-lo pelo Insomina ou Postman etc.. 
-
-![image](https://user-images.githubusercontent.com/79803635/231004238-ea77a599-70a7-4f12-839a-bd69c96d1d6b.png)
-
-http://localhost:3333/auth/register
-
-
-{
-	"name": "use",
-	"email": "use",
-	"password": "123"
-}
-
-<hr>
-
-## Iniciar aplicação
-
-Para iniciar o servidor nodejs utilizar o comando no direitorio raiz da aplicação 
-
-|| \Desktop\REST_API_NODE> $`npm start`
-
-Para iniciar o front-end: use o comando no diretorio
-
-|| \Desktop\REST_API_NODE\my-app> $`yarn start`
-
 <hr>
 
 ### Back-end
