@@ -21,8 +21,8 @@ const Products = (props: {category: string}) => {
       {data && data ? 
       data.filter(product => product.category === props.category)
       .map((element, index) => {
-        return <div className='product-hover'>  
-          <div key={index} className='products-card'>
+        return <div className='product-hover' key={element.name + index}>  
+          <div className='products-card'>
             <img src={element.image} alt={element.name} />
             <div>
               <h3>{element.name}</h3>

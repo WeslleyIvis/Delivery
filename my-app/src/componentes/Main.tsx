@@ -4,8 +4,6 @@ import CategoryProductNavSelection from './sub_componentes/CategoryProductNavSel
 
 const Main = (props: {category: string}) => {
 
-  console.log(props)
-
   return (
     <main className='main'>
       {
