@@ -130,6 +130,8 @@ h1 {
     font-family: var(--font-robo);
 }
 
+/* PRODUCTS */
+
 .products-content {
     max-width: var(--content-max-width);
     display: grid;
@@ -243,4 +245,48 @@ h1 {
     background-color: var(--color-contrast);
     top: 120%;
     position: absolute;
+}
+
+/* LOCALE CONTENT */
+
+.locale-content {
+    display: flex;
+    background-color: rgba(244, 245, 247, 1);
+    justify-content: space-around;
+    align-items: center;
+    max-width: var(--content-max-width);
+    margin: 50px auto;
+    height: 405px;
+}
+
+.locale-content div {
+    text-align: center;
+    max-width: 300px;
+    color: var(--color-font-clear);
+}
+
+.locale-content div h2 {
+    padding: 30px 0 50px 0;
+    font-size: 1.7em;
+    color: var(--color-font-nav);
+}
+
+.locale-content img {
+    max-width: 55px;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 50px;
+    color: var(--color-font-clear);
+}
+
+.footer-logo img {
+    max-width: 100px;
+}
+
+.footer-redes img {
+    margin: 30px;
+    width: 17px;
 }

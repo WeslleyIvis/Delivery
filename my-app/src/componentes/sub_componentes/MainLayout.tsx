@@ -1,12 +1,16 @@
 import React from 'react'
 import Products from './Products';
+import Locale from './Locale';
 
 
 const MainLayout = () => {
     const [category, setCategory] = React.useState('Açai');
+    const [activeClass, setActiveClass] = React.useState(0);
+    const menu = ['Açai', 'Salgados', 'Cafe', 'Hamburguers']
 
-    function handleCategory(props: React.SyntheticEvent) {
+    function handleCategory(props: React.SyntheticEvent, index: number) {
         setCategory((props.target as HTMLLIElement).innerHTML);
+        setActiveClass(index);
     }
  
   return (
@@ -25,14 +29,19 @@ const MainLayout = () => {
 
         <section className='menu-content'>
             <ul className='menu-selection'>
-                <li className='active' onClick={event => handleCategory(event)}>Açai</li>
-                <li onClick={event => handleCategory(event)}>Salgados</li>
-                <li onClick={event => handleCategory(event)}>Cafe</li>
-                <li onClick={event => handleCategory(event)}>Hamburguers</li>
+                {menu.map((element, index) => {
+                    return <li 
+                        className={index === activeClass ? 'active' : ''}
+                        onClick={event => handleCategory(event, index)} 
+                        key={index}>
+                        {element}
+                    </li>
+                })}
+
             </ul>
             
-            <Products category={category}/>
-
+            <Products category={category} display='products-content'/>
+            <Locale />
         </section>  
     </div>
   )
