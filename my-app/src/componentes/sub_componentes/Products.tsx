@@ -1,7 +1,7 @@
 import React from 'react'
 import { Product } from './CategoryProductNavSelection';
 
-const Products = (props: {category: string}) => {
+const Products = (props: {category: string, display: string}) => {
   const [data, setData] = React.useState<Product[]>();
   
   async function filterCategory() {
@@ -17,7 +17,7 @@ const Products = (props: {category: string}) => {
 
   return (
     <section>
-    <div className='products-content'>
+    <div className={props.display}>
       {data && data ? 
       data.filter(product => product.category === props.category)
       .map((element, index) => {
