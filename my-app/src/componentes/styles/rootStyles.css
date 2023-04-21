@@ -217,6 +217,34 @@ h1 {
     }
 }
 
+.products-add-items {
+    max-width: var(--content-max-width);
+    padding: 25px;
+    margin: 20px auto;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+    border-radius: 5px;
+    position: relative;
+}
+
+.products-add-items:hover {
+    background-color: rgb(223, 223, 223);
+}
+
+.products-add-items::after {
+    content: ' ';
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    border-top: 5px solid var(--color-font-clear);
+    border-left: 5px solid var(--color-font-clear);
+    width: 25px;
+    height: 25px;
+    rotate: -135deg;
+
+}
+
 /* MENU CONTENT */
 
 .menu-selection {
