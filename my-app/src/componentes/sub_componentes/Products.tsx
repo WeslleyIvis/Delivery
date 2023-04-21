@@ -1,7 +1,7 @@
 import React from 'react'
 import { Product } from './CategoryProductNavSelection';
 
-const Products = (props: {category: string, display: string}) => {
+const Products = (props: {category: string, display: string, amount: number} ) => {
   const [data, setData] = React.useState<Product[]>();
   
   async function filterCategory() {
@@ -20,6 +20,7 @@ const Products = (props: {category: string, display: string}) => {
     <div className={props.display}>
       {data && data ? 
       data.filter(product => product.category === props.category)
+      .slice(0, props.amount)
       .map((element, index) => {
         return <div className='product-hover' key={element.name + index}>  
           <div className='products-card'>
