@@ -40,7 +40,7 @@ const MainLayout = () => {
 
             </ul>
             
-            <Products category={category} display='products-content'/>
+            <Products category={category} display='products-content' amount={8}/>
             <Locale />
         </section>  
     </div>

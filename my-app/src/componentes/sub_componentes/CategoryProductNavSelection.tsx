@@ -21,7 +21,7 @@ const CategoryProductNavSelection = (props: {category: string}) => {
             </div>
         </div>
 
-        {props.category && props.category ? <Products category={props.category} display='products-content'/> : null}    
+        {props.category && props.category ? <Products category={props.category} display='products-content' amount={-1}/> : null}    
     </section>
   )
 }
