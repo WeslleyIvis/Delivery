@@ -6,12 +6,11 @@ export const Header = () => {
       <ul className='header-content'>
         <li>
           <a href="/">
-          <img src={require("./images/iconFace.png")} alt="Logo Facebook" />
+          <img src={require("./images/facebook.png")} alt="Logo Facebook" />
           </a>
           <a href="/">
-          <img src={require("./images/iconTwiter.png")} alt="Logo Twiter" />
+          <img src={require("./images/twitter.png")} alt="Logo Twiter" />
           </a>
-          <a href="/"><img src={require("./images/iconFace.png")} alt="Logo Facebook" /></a>
         </li>
         <li className='header-menu'>
           <a href="/"><span>Lorem</span></a>
