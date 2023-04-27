@@ -24,7 +24,7 @@ export const Header = () => {
           <span>Call back</span>
         </li>
         <li className='header-login'>
-          <img src={require("./images/icon-user-48 .png")} alt="" />
+          <img src={require("./images/user.png")} alt="" />
           <a href="/">Login</a>
         </li>
       </ul>
