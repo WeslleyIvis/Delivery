@@ -8,6 +8,11 @@ O objetivo deste teste é montar uma API para gerenciar um cardápio online.
 
 <hr>
 
+ ### STATUS
+ 
+ Este projeto está em desenvolvimento
+ 
+  <hr>
 ### Back-end
 - Typescript
 - NodeJS
@@ -81,8 +86,4 @@ O objetivo deste teste é montar uma API para gerenciar um cardápio online.
 
   Ajuda a medir e monitorar as métricas de desempenho do usuário na web. Ele fornece uma série de utilitários e funções para medir métricas de desempenho, como tempo de carregamento da página, interatividade do usuário e estabilidade visual, permitindo que os desenvolvedores monitorem e otimizem a experiência do usuário em seus aplicativos web.
   
- <hr>
- 
- ### STATUS
- 
- Este projeto está sendo refatorado por completo.
+
