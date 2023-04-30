@@ -2,17 +2,13 @@
 
 O objetivo deste teste é montar uma API para gerenciar um cardápio online.
 
-## Technologies
-
-![image](https://user-images.githubusercontent.com/79803635/230973068-1137914b-55f4-4ca1-95b5-6a812112018b.png)
-
-<hr>
-
  ### STATUS
  
  Este projeto está em desenvolvimento
  
   <hr>
+ 
+## Technologies
 ### Back-end
 - Typescript
 - NodeJS
