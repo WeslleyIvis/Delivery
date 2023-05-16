@@ -3,6 +3,7 @@ import { Product } from './CategoryProductNavSelection';
 
 const Products = (props: { category: string, display?: string, amount?: number } = { category: '', display: 'products-content', amount: -1 } ) => {
   const [data, setData] = React.useState<Product[]>();
+  const [loading, setLoading] = React.useState(true);
   const [countAmount, setCountAmount] = React.useState(props.amount);
   const [filterAmount, setFilterCount] = React.useState(0);
   
@@ -10,9 +11,15 @@ const Products = (props: { category: string, display?: string, amount?: number }
     await fetch('http://localhost:3333/project/product')
     .then(r => r.json())
     .then(value => {
-      setData(value)
+      setTimeout(() => {
+        setData(value)
+        setLoading(false);
+      }, 3000)
     })
-    .catch(err => console.log({error: err}));
+    .catch(err => {
+      console.error({error: err})
+      setLoading(false);
+    });
   }
 
   React.useEffect(() => {
@@ -26,6 +33,9 @@ const Products = (props: { category: string, display?: string, amount?: number }
     }
     setCountAmount(props.amount);
   }, [data, props.category, props.amount])
+
+  if(loading) 
+    return <div>Loading products...</div>
 
   return (
     <section>

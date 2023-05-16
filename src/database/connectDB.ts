@@ -47,60 +47,20 @@ const products: ProductTypes[] = [
     {name: 'Hamburguer 4', value: "$R 60,99", category:"Hamburguers", "image": "https://cdn.minhareceita.com.br/2020/08/hamburguer-angus-fatias-redondas-bacon-desktop.jpg"},
 ]
 
-const hash = process.env.SECRET_HASH || "013de0c99e66d589b96d74eb85d44c58"
 
-function generateToken(paramns: {}) {
-    return jwt.sign(paramns, hash, {
-        expiresIn: 86400,
-    })
-}
+// async function createCategorys(categories: CategoryTypes[]) {
+//         if(!(await Category.findOne({category: categories[0].category})))
+//             Category.insertMany(categories)  
+//                 .then(() => console.log('Categories Data inserted'))
+//                 .catch((err) => console.log(`Error: ${err}`));
 
-async function insertUser(name: string, email: string, password: string) {
-    try {
-      // Verifica se o usuário já existe
-      const userExists = await User.findOne({ email });
-      if (userExists) {
-        console.log('User already exists');
-        return;
-      }
-  
-      // Criptografa a senha
-      const hashedPassword = await bcrypt.hash(password, 10);
-  
-      // Insere o usuário no banco de dados
-      const user = await User.create({
-        name,
-        email,
-        password: hashedPassword
-      });
-  
-      console.log('User inserted:', user);
-  
-      // Gera um token de autenticação
-      const token = generateToken({ id: user._id });
-  
-      return {
-        user,
-        token
-      };
-    } catch (err) {
-      console.log('Error inserting user:', err);
-    }
-  }
+//             Product.insertMany(products)
+//                 .then(() => console.log('Products Data inserted'))
+//                 .catch((err) => console.log(`Error: ${err}`));
 
-async function createCategorys(categories: CategoryTypes[]) {
-        if(!(await Category.findOne({category: categories[0].category})))
-            Category.insertMany(categories)  
-                .then(() => console.log('Categories Data inserted'))
-                .catch((err) => console.log(`Error: ${err}`));
+//             insertUser("user", "user", "1234")
 
-            Product.insertMany(products)
-                .then(() => console.log('Products Data inserted'))
-                .catch((err) => console.log(`Error: ${err}`));
-
-            insertUser("user", "user", "1234")
-
-}
+// }
 
 export const connectMongoDB = async () => {
     try {
@@ -110,7 +70,7 @@ export const connectMongoDB = async () => {
         console.log(error)
     } 
 
-    createCategorys(categoryData);
+    // createCategorys(categoryData);
 }
 
 
