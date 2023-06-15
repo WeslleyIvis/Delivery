@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #button {
+            border: none;
+            border-radius: 5px;
+            background: rgb(248, 191, 68);
+            padding: 10px;
+            color: white;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .form-p {
+            display: none;
+            justify-content: center;
+            gap: 5px;
+            animation: 1s anima forwards;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        @keyframes anima {
+            from {
+                margin-left: 50px;
+                opacity: 0;
+            }
+
+            to {
+                margin: 0;
+                opacity: 1;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="form-p active">
+        <label for="pesquisa">Pesquisa
+            <input type="text" name="pesquisa" id="pesquisa">
+            <button type="submit">Pesquisar</button>
+        </label>
+    </form>
+
+    <div>
+        <button type="button" id="button">Pesquisar</button>
+    </div>
+
+    <script>
+        const form = document.querySelector('.form-p');
+
+        document.querySelector("#button").addEventListener('click', () => {
+            form.classList.toggle('active');
+        })
+
+    </script>
+</body>
+
+</html>

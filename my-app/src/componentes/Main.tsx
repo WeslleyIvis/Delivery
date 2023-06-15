@@ -3,6 +3,7 @@ import MainLayout from './sub_componentes/MainLayout'
 import CategoryProductNavSelection from './sub_componentes/CategoryProductNavSelection'
 import Footer from './Footer'
 
+
 const Main = (props: {category: string}) => {
 
   return (

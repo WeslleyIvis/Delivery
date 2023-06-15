@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const Header = () => {
   return (
@@ -20,7 +19,7 @@ export const Header = () => {
         </li>
         <li className='header-phone'>
           <img src={require("./images/icons8-phone-50.png")} alt="Phone" />
-          <p className="number-phone">1 (800) 4234-9238</p>
+          <p className="number-phone">1 (800) 5555-9238</p>
           <span>Call back</span>
         </li>
         <li className='header-login'>
