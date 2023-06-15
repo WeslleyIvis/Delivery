@@ -1,9 +1,6 @@
 import mongoose from "mongoose";
 import { Category, CategoryTypes } from "../models/category";
-import {User} from '../models/users'
 import { Product, ProductTypes } from "../models/products";
-import  jwt  from "jsonwebtoken";
-const bcrypt = require('bcryptjs');
 
 const mongoURI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/nodeapi"
 
