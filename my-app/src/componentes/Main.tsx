@@ -4,7 +4,7 @@ import CategoryProductNavSelection from './sub_componentes/CategoryProductNavSel
 import Footer from './Footer'
 
 
-const Main = (props: {category: string}) => {
+const Main = (props: {category: string, name: string}) => {
 
   return (
     <main className='main'>
