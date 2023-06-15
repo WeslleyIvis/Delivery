@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchBox from './sub_componentes/SearchBox';
 export interface Category {
   category: string
 }
@@ -44,7 +45,9 @@ const Navbar = (props: SetCategory) => {
           <a href="/"><img src={require("./images/bag.png")} alt="Bag" /></a>
         </div>
       </div>
+      <SearchBox/>
     </nav>
+    
   )
 }
 
