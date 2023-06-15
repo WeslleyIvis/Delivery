@@ -1,14 +1,30 @@
 import React from 'react'
-import SearchBox from './sub_componentes/SearchBox';
 export interface Category {
   category: string
 }
 interface SetCategory {
   handleCategory: (r: string) => void;
+  handleSearch: (r: string) => void;
 }
 
 const Navbar = (props: SetCategory) => {
   const [categories, setCategories] = React.useState<Category[]>([]);
+  const [valueInput, setValueInput] = React.useState<string>('');
+  const [isActive, setIsActive] = React.useState(false);
+
+  const activeClass = () => {
+    setIsActive(!isActive);
+  }
+
+  const setValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setValueInput(event.target.value);
+  }
+
+  const searchProd = (value: React.KeyboardEvent) => {
+    if(value.key === 'Enter') {
+      props.handleSearch(valueInput)
+    }
+  }
 
   async function getCategories() {
     await fetch('http://localhost:3333/categories')
@@ -40,12 +56,25 @@ const Navbar = (props: SetCategory) => {
         </div> : null }
 
         <div className='nav-icons'>
-          <a href="/"><img src={require("./images/lupa.png")} alt="Lupa" /></a>
+          <button onClick={() => activeClass()}>
+            <img src={require("./images/lupa.png")} alt="Lupa" />
+          </button>
           <a href="/"><img src={require("./images/heart.png")} alt="Heart" /></a>
           <a href="/"><img src={require("./images/bag.png")} alt="Bag" /></a>
         </div>
       </div>
-      <SearchBox/>
+
+      <div className={isActive ? 'content-t-input' : 'disabled'}>
+        <input 
+          type="text" 
+          className="input-t-search" 
+          placeholder='Find your product' 
+          onChange={(event) => setValue(event)} 
+          onKeyUp={(event) => searchProd(event)}/>
+        <button>
+          <img src={require("./images/lupa.png")} alt='' onClick={() => console.log(valueInput)}/>
+        </button>
+      </div>
     </nav>
     
   )
