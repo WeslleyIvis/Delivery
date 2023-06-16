@@ -1,7 +1,7 @@
 import React from 'react'
 import { Product } from './CategoryProductNavSelection';
 
-const Products = (props: { category: string, display?: string, amount?: number } = { category: '', display: 'products-content', amount: -1 } ) => {
+const Products = (props: { category: string, name?: string, display?: string, amount?: number } = { category: '', display: 'products-content', amount: -1 } ) => {
   const [data, setData] = React.useState<Product[]>();
   const [loading, setLoading] = React.useState(true);
   const [countAmount, setCountAmount] = React.useState(props.amount);
@@ -22,6 +22,8 @@ const Products = (props: { category: string, display?: string, amount?: number }
     });
   }
 
+  console.log(data)
+
   React.useEffect(() => {
     filterCategory()
   }, [])
@@ -37,11 +39,36 @@ const Products = (props: { category: string, display?: string, amount?: number }
   if(loading) 
     return <div>Loading products...</div>
 
+  if(props.name) {
+    return <section>
+      <div className={props.display}>
+        {data && data ? 
+        data.filter(product => product.name.toLowerCase().includes(props.category.toLowerCase()))
+        .slice(0, countAmount)
+        .map((element, index) => {
+          return <div className='product-hover' key={element.name + index}>  
+            <div className='products-card'>
+              <img src={element.image} alt={element.name} />
+              <div>
+                <h3>{element.name}</h3>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                <p>{element.value}</p>
+                <button>
+                  <img src={require("../images/bag.png")} alt="bag" /> Comprar</button>
+              </div>
+            </div>
+          </div>
+        }) : null}  
+      </div>  
+      {countAmount && countAmount < filterAmount ? <div onClick={() => setCountAmount(countAmount + 8)} className='products-add-items'></div> : null}
+  </section>
+  }
+
   return (
     <section>
       <div className={props.display}>
         {data && data ? 
-        data.filter(product => product.category === props.category)
+        data.filter(product => product.category.toLowerCase().includes(props.category.toLowerCase()))
         .slice(0, countAmount)
         .map((element, index) => {
           return <div className='product-hover' key={element.name + index}>  
