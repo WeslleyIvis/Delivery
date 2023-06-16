@@ -9,11 +9,16 @@
     --font-robo: roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.disabled {
+    display: none;
+}
 
 h1 {
     font-size: clamp(26px, 49px, 49px );
     color: var(--color-font-nav);
   }
+
+  
 
 .header {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -114,6 +119,12 @@ nav {
     background-color: var(--color-contrast);
 }
 
+.nav-icons button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
 .content-t-input {
     position: relative;
     margin: 0 auto;
@@ -132,10 +143,11 @@ nav {
 .content-t-input button {
     padding: 10px;
     border-radius: 0 2em 2em 0;
+    width: 5em;
     cursor: pointer;
     border: none;
     position: absolute;
-    background-color: var(--color-contrast);
+    background-color: var(--color-font);
     top: 0;
     left: 100%;
 }
@@ -295,11 +307,11 @@ nav {
     cursor: pointer;
 }
 
-.active {
-    color: rgba(109, 61, 73, 1);
+.active-category {
+    color: rgb(0, 0, 0);
 }
 
-.active::after {
+.active-category::after {
     content: '';
     left: 0;
     width: 100%;
