@@ -32,7 +32,7 @@ const MainLayout = () => {
             <ul className='menu-selection'>
                 {menu.map((element, index) => {
                     return <li 
-                        className={index === activeClass ? 'active' : ''}
+                        className={index === activeClass ? 'active-category' : ''}
                         onClick={event => handleCategory(event, index)} 
                         key={index}>
                         {element}
