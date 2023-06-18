@@ -1,7 +1,7 @@
 import React from 'react'
 import { Product } from './CategoryProductNavSelection';
 
-const Products = (props: { category: string, name?: string, display?: string, amount?: number } = { category: '', display: 'products-content', amount: -1 } ) => {
+const Products = (props: { category: string, name: string, display?: string, amount?: number } = { category: '', name: '', display: 'products-content', amount: -1 } ) => {
   const [data, setData] = React.useState<Product[]>();
   const [loading, setLoading] = React.useState(true);
   const [countAmount, setCountAmount] = React.useState(props.amount);
@@ -22,8 +22,6 @@ const Products = (props: { category: string, name?: string, display?: string, am
     });
   }
 
-  console.log(data)
-
   React.useEffect(() => {
     filterCategory()
   }, [])
@@ -36,6 +34,8 @@ const Products = (props: { category: string, name?: string, display?: string, am
     setCountAmount(props.amount);
   }, [data, props.category, props.amount])
 
+  console.log({category: props.category, name: props.name})
+  
   if(loading) 
     return <div>Loading products...</div>
 

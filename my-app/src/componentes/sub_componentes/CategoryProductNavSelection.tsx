@@ -9,7 +9,7 @@ export interface Product {
     image: string;
   }
 
-const CategoryProductNavSelection = (props: {category: string}) => {
+const CategoryProductNavSelection = (props: {category: string, name: string}) => {
 
   return (
     <section>      
@@ -21,7 +21,7 @@ const CategoryProductNavSelection = (props: {category: string}) => {
             </div>
         </div>
 
-        {props.category && props.category ? <Products category={props.category} display='products-content' /> : null}    
+        {props.category && props.category ? <Products category={props.category} name="" display='products-content' /> : null}    
     </section>
   )
 }

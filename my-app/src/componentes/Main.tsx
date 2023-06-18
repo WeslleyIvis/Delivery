@@ -11,7 +11,7 @@ const Main = (props: {category: string, name: string}) => {
       {
         props.category && props.category 
         ? 
-        <CategoryProductNavSelection category={props.category}/>
+        <CategoryProductNavSelection category={props.category} name={props.name}/>
         :    
         <MainLayout />
       }

@@ -22,6 +22,7 @@ const Navbar = (props: SetCategory) => {
 
   const searchProd = (value: React.KeyboardEvent) => {
     if(value.key === 'Enter') {
+      console.log(valueInput)
       props.handleSearch(valueInput)
     }
   }

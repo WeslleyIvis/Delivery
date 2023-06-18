@@ -6,7 +6,7 @@ import Main from './componentes/Main';
 
 function App() {
   const [category, setCategory] = React.useState<string>('');
-  const [search, setSearch] = React.useState<string>('');
+  const [search, setSearch] = React.useState<string>('asdsa');
 
   const handleCategory = (r: string) => {
     setCategory(r);
@@ -15,6 +15,8 @@ function App() {
   const handleSearch = (r: string) => {
     setSearch(r);
   }
+
+  console.log(search)
 
   return (
     <div>

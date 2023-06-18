@@ -41,7 +41,7 @@ const MainLayout = () => {
 
             </ul>
             
-            <Products category={category} display='products-content' amount={8}/>
+            <Products category={category} name={''} display='products-content' amount={8}/>
             <Locale />
         </section>  
     </div>
