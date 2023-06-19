@@ -5,11 +5,10 @@ import Footer from './Footer'
 
 
 const Main = (props: {category: string, name: string}) => {
-
   return (
     <main className='main'>
       {
-        props.category && props.category 
+        props.category || props.name 
         ? 
         <CategoryProductNavSelection category={props.category} name={props.name}/>
         :    
