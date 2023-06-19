@@ -6,7 +6,7 @@ const Products = (props: { category: string, name: string, display?: string, amo
   const [loading, setLoading] = React.useState(true);
   const [countAmount, setCountAmount] = React.useState(props.amount);
   const [filterAmount, setFilterCount] = React.useState(0);
-  
+
   async function filterCategory() {
     await fetch('http://localhost:3333/project/product')
     .then(r => r.json())
@@ -43,7 +43,7 @@ const Products = (props: { category: string, name: string, display?: string, amo
     return <section>
       <div className={props.display}>
         {data && data ? 
-        data.filter(product => product.name.toLowerCase().includes(props.category.toLowerCase()))
+        data.filter(product => product.name.toLowerCase().includes(props.name.toLowerCase()))
         .slice(0, countAmount)
         .map((element, index) => {
           return <div className='product-hover' key={element.name + index}>  
@@ -60,7 +60,6 @@ const Products = (props: { category: string, name: string, display?: string, amo
           </div>
         }) : null}  
       </div>  
-      {countAmount && countAmount < filterAmount ? <div onClick={() => setCountAmount(countAmount + 8)} className='products-add-items'></div> : null}
   </section>
   }
 
