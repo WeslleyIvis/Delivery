@@ -20,11 +20,9 @@ const Navbar = (props: SetCategory) => {
       setValueInput(event.target.value);
   }
 
-  const searchProd = (value: React.KeyboardEvent) => {
-    if(value.key === 'Enter') {
-      console.log(valueInput)
-      props.handleSearch(valueInput)
-    }
+  const searchProd = (value: string) => {
+      props.handleSearch(value)
+    
   }
 
   async function getCategories() {
@@ -43,7 +41,10 @@ const Navbar = (props: SetCategory) => {
   return (
     <nav className="nav">
       <div className='nav-content'>
-        <div className='logo' onClick={() => props.handleCategory('')}>
+        <div className='logo' onClick={() => {
+          props.handleCategory('')
+          props.handleSearch('')
+          }}>
           <img src="https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.com.png" alt="Logo Food" />
         </div>
 
@@ -52,6 +53,9 @@ const Navbar = (props: SetCategory) => {
             return <a href='/' key={element.category} onClick={(e) => {
               e.preventDefault();
               props.handleCategory(element.category);
+
+              // Busca por pesquisa recebe vazio para não ter conflito
+              props.handleSearch('');
             }}>{element.category}</a>
           })}
         </div> : null }
@@ -71,9 +75,11 @@ const Navbar = (props: SetCategory) => {
           className="input-t-search" 
           placeholder='Find your product' 
           onChange={(event) => setValue(event)} 
-          onKeyUp={(event) => searchProd(event)}/>
+          onKeyUp={(event) => 
+            event.key === 'Enter' ? searchProd(valueInput) : null
+          }/>
         <button>
-          <img src={require("./images/lupa.png")} alt='' onClick={() => console.log(valueInput)}/>
+          <img src={require("./images/lupa.png")} alt='' onClick={() => searchProd(valueInput)}/>
         </button>
       </div>
     </nav>
