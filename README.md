@@ -1,6 +1,6 @@
 # Delivery
 
-O objetivo deste teste é montar uma API para gerenciar um cardápio online.
+
 
  ### STATUS
  
