@@ -27,6 +27,5 @@
 - CSS
 - Javascript
 - React
-- React-router-dom
 - Typescript
 
