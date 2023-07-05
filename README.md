@@ -1,6 +1,6 @@
 # Delivery
 
-O objetivo deste teste é montar uma API para gerenciar um cardápio online.
+
 
  ### STATUS
  
@@ -27,6 +27,5 @@ O objetivo deste teste é montar uma API para gerenciar um cardápio online.
 - CSS
 - Javascript
 - React
-- React-router-dom
 - Typescript
 
