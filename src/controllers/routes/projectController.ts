@@ -31,22 +31,22 @@ router.get('/product/:id', async (req, res) => {
 })
 
 // Validação de Token para seguir nas proximas rotas
-router.use(authMiddleware);
+//router.use(authMiddleware);
 
 router.post('/product', async (req, res) => {
-    const { name, value, category } = req.body;
+    const { name, value, category, image } = req.body;
 
     try {
         if(await Product.findOne({name})) 
             return res.status(400).send({error: 'Product already exists'})
      
-        if(!name || !value || !category)  {
-            return res.status(400).send({error: 'Data needs to be filled in'})
+        if(!name || !value || !category || !image)  {
+            return res.status(400).send({error: 'Data needs to be filled in {name, value, category, image}'})
         }
         
-        if(!(await Category.findOne({category: category}))) {
-            return res.status(400).send({error: 'Category does not exist'})
-        }
+        // if(!(await Category.findOne({category: category}))) {
+        //     return res.status(400).send({error: 'Category does not exist'})
+        // }
 
         const product = await Product.create(req.body);
         

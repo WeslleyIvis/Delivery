@@ -8,9 +8,10 @@ interface SetCategory {
 }
 
 const Navbar = (props: SetCategory) => {
-  const [categories, setCategories] = React.useState<Category[]>([]);
+  const categories = ['Salgados', 'Açai', 'Cafe', 'Sushi', 'Doce', 'Hamburguers']
   const [valueInput, setValueInput] = React.useState<string>('');
   const [isActive, setIsActive] = React.useState(false);
+
 
   const activeClass = () => {
     setIsActive(!isActive);
@@ -21,22 +22,8 @@ const Navbar = (props: SetCategory) => {
   }
 
   const searchProd = (value: string) => {
-      props.handleSearch(value)
-    
+      props.handleSearch(value)  
   }
-
-  async function getCategories() {
-    await fetch('http://localhost:3333/categories')
-    .then(resp => resp.json())
-    .then(data => {
-      setCategories(data);
-    })
-    .catch(err => console.log({error: err}));
-  }
-  
-  React.useEffect(() => {
-    getCategories();
-  }, [])
 
   return (
     <nav className="nav">
@@ -50,13 +37,13 @@ const Navbar = (props: SetCategory) => {
 
         {categories && categories ? <div className='nav-categories'>
           {categories.map(element => {
-            return <a href='/' key={element.category} onClick={(e) => {
+            return <a href='/' key={element} onClick={(e) => {
               e.preventDefault();
-              props.handleCategory(element.category);
+              props.handleCategory(element);
 
               // Busca por pesquisa recebe vazio para não ter conflito
               props.handleSearch('');
-            }}>{element.category}</a>
+            }}>{element}</a>
           })}
         </div> : null }
 
@@ -78,8 +65,8 @@ const Navbar = (props: SetCategory) => {
           onKeyUp={(event) => 
             event.key === 'Enter' ? searchProd(valueInput) : null
           }/>
-        <button>
-          <img src={require("./images/lupa.png")} alt='' onClick={() => searchProd(valueInput)}/>
+        <button onClick={() => searchProd(valueInput)}>
+          <img src={require("./images/lupa.png")} alt='' />
         </button>
       </div>
     </nav>
