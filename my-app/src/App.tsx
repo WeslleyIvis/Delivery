@@ -16,8 +16,6 @@ function App() {
     setSearch(r);
   }
 
-  console.log(search)
-
   return (
     <div>
         <Header />
